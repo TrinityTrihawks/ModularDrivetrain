@@ -1,6 +1,14 @@
-package org.usfirst.frc.team4215.robot.wheels;
+package org.usfirst.frc.team4215.robot.subsystems;
 
-public class Wheels {
+import org.usfirst.frc.team4215.robot.wheels.OneWheel;
+import org.usfirst.frc.team4215.robot.wheels.WheelSet;
+import org.usfirst.frc.team4215.robot.wheels.WheelSnapshot;
+
+import edu.wpi.first.wpilibj.command.Subsystem;
+
+
+
+public class Wheels extends Subsystem {
 	public OneWheel frontRight, frontLeft, backRight, backLeft;
 	public WheelSet left, right, all, frontLeftBackRight, frontRightBackLeft;
 	
@@ -21,9 +29,15 @@ public class Wheels {
 				new OneWheel[] {frontLeft, backRight});
 		frontRightBackLeft = new WheelSet("frontRightBackLeft",
 				new OneWheel[] {frontRight, backLeft});
+		
+		//invert the front wheels (copied from 2018)
+		frontLeft.setInverted(true);
+		frontRight.setInverted(true);
+		
+		
 	}
 	
-	
+
 	//sets all the wheels to a certain power
 	//shortcut for wheels.all.set()
 	public void set(double power) {
@@ -39,4 +53,10 @@ public class Wheels {
 	public WheelSnapshot getSnapshot() {
 		return all.getSnapshot();
 	}
+	
+	public void initDefaultCommand() {
+		// Set the default command for a subsystem here.
+		// setDefaultCommand(new MySpecialCommand());
+	}
 }
+

@@ -14,13 +14,55 @@ package org.usfirst.frc.team4215.robot;
  * floating around.
  */
 public class RobotMap {
-	// For example to map the left and right motors, you could define the
-	// following variables to use with your drivetrain subsystem.
-	// public static int leftMotor = 1;
-	// public static int rightMotor = 2;
+	//copied from 2018 Project
+	
+	
+	// Joysticks
+	public final static int driveStick = 0; 
+	public final static int adjutantJoystick = 1;
 
-	// If you are using multiple modules, make sure to define both the port
-	// number and the module. For example you with a rangefinder:
-	// public static int rangefinderPort = 1;
-	// public static int rangefinderModule = 1;
+	// Talons for drivetrain
+	public final static int talonWheel_backright = 1;
+	public final static int talonWheel_frontright = 2;
+	public final static int talonWheel_backleft = 0;
+	public final static int talonWheel_frontleft = 3;
+	
+	/*// Talons for drivetrain //MiniBot
+	public final static int talonWheel_backright = 3;
+	public final static int talonWheel_frontright = 2;
+	public final static int talonWheel_backleft = 1;
+	public final static int talonWheel_frontleft = 0;*/
+			
+	// Victors for Intake
+	public final static int intakeVictor1 = 3;
+	public final static int intakeVictor2 = 4;
+	
+	// Joystick button controls for Intake
+	public final static int intakeButton = 3;
+	public final static int intakeOffButton = 1;
+	public final static int spitButton = 4;
+
+	// Victors for Lift
+	public final static int liftvictorOne = 0;
+	public final static int liftvictorTwo = 1;
+	
+	// Valuable numbers for Drivetrain
+	//public final static int numberOfWheels = 4;
+	//18.875
+	public final static double wheelCircumference = 18.875; // Essentially 6*pi(C=D*pi), however the C is a little larger in reality
+
+	// Sensor channels
+	public final static int gyroChannel = 0;
+	// TODO Find and set the actual values for these ports
+	public final static int frontLeftUltrasonicChannel = 3;
+	public final static int frontRightUltrasonicChannel = 1;
+	public final static String sideRightUltrasonic = "/dev/ttyUSB1";
+	public final static String sideLeftUltrasonic = "/dev/ttyUSB0";
+	public final static int liftUltrasonicChannel = 2;
+	
+	// Command numbers
+	public final static double liftSpeed = .4;
+	
+	public final static int middleBasicAutoDistance = 120;
+
 }
